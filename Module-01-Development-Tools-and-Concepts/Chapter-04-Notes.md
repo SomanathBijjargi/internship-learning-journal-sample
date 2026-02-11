@@ -80,3 +80,21 @@ Stop a running container:
 ```bash
 podman stop <image_name / image_id>
 ```
+## Port Building For Container Access
+
+See the images that are present 
+```
+podman images
+```
+Run the image in the detached mode and name the image
+```
+podman run -d --name <ur_name> -p 8888:8888 <img_id>
+```
+To see the link where the conatiner is running
+```
+podman logs <img_name>
+```
+## Mounting the Cintainer file structure with local file Structure
+```
+podman run -d --name <your name> -p 8888:8888 -v~/<HostFilePath>:<ContainerFilePath> <Repo_name>
+```
