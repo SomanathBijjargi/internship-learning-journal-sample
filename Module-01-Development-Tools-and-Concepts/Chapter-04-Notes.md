@@ -98,3 +98,39 @@ podman logs <img_name>
 ```
 podman run -d --name <your name> -p 8888:8888 -v~/<HostFilePath>:<ContainerFilePath> <Repo_name>
 ```
+## Containerzing ollama for local LLM's
+```
+podman pull docker.io/alpine/ollama:0.15.6
+```
+## Integrating LLM inside a container
+```
+podman run -d --name ollama docker.io/alpine/ollama
+
+podman exec -it ollama sh 
+```
+It will open the interactive shell
+```
+ollama run gemma3:270m
+```
+It will install the gemma3:270m model inside the container
+
+## Podman Networking for inter-container Communication
+
+- First Create a container
+```
+podman network create ai        # this is to create a network
+
+podman network ls               # List the available network
+
+podman network rm ai            # remove the network
+```
+Here **ai** is the network name
+
+- add / connect the two containers to the network.
+```
+podman run -d --name jupylab -p 8888:8888 -v ~/Dummy:/home/jovyan/work --network ai -p 5000:5000 quay.io/jupyter/base-notebook
+
+podman run -d --name ollama -p 11434:11434 --network ai -v ollama:/root/ollama docker.io/alpine/ollama
+```
+
+
