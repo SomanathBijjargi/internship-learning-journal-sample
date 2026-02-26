@@ -22,9 +22,10 @@ Course Link: https://tds.s-anand.net/#/
 
 | Module | Topics | Status |
 |--------|--------|--------|
-| Module 01 | Foundations | In Progress |
-| Module 02 | Tools & Implementation | Not Started |
-| Module 03 | Project Work | Not Started |
+| Module 01 | Development Tools | Completed |
+| Module 02 | Deployment Tools | Completed |
+| Module 03 | LLMS | Completed |
+| Module 04 | Data Sourcing | In Progress|
 
 ---
 
