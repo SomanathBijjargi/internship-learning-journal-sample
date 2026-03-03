@@ -38,3 +38,4 @@ To extract unique values and strip out duplicate entries:
 * Select the column you want to filter, such as the Country column. 
 * Navigate to the **Data** tab on the Excel ribbon.
 * Click on the **Remove Duplicates** function. Excel will process the column, instantly remove the duplicate values, and leave only the unique entries behind.
+
