@@ -1,5 +1,3 @@
-
-
 # Week 4 Session 1: APIs, Geocoding, and Data Extraction
 
 ## 1. Extracting Backend APIs via Browser Network Tools
