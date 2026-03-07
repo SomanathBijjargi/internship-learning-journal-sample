@@ -153,3 +153,74 @@ GROUP BY region;
 SELECT * FROM orders 
 PIVOT(COUNT(*) FOR region IN ('US', 'EU'));
 ```
+
+---
+---
+
+# Setting Up Your First dbt Project
+
+**dbt (data build tool)** is an open-source project that handles the transformation piece of the ELT (Extract, Load, Transform) process by blending software engineering automation with SQL. 
+
+Below are the steps to install dbt, initialize a project, configure your Snowflake connection, and push your work to GitHub.
+
+## 1. Installation
+Before installing, ensure you have **Python** and **Git** installed on your machine. You can install dbt globally using the command line via Python's package manager, pip. Once the installation finishes downloading its dependencies, verify it by checking the version.
+
+```bash
+pip install dbt
+dbt --version
+```
+
+## 2. Project Initialization
+There are two ways to start: you can either create a GitHub repository first and clone it, or create your files and push them to a repository later. Assuming you cloned an empty repository, navigate into it and initialize your skeleton dbt project. 
+
+```bash
+git clone <your_repository_url>
+cd <your_repository_folder>
+dbt init demo_dbt
+```
+This command generates a skeleton project containing core folders like `models`, `macros`, `snapshots`, and `tests`. 
+
+## 3. Profile Configuration (Snowflake)
+Initializing the project also creates a `.dbt` folder in your machine's user directory containing a `profiles.yml` file. This file splits up credentials based on environments (like `dev` and `prod`). 
+
+Below is a configuration template to connect dbt to a **Snowflake** database. It sets the threads to 10 (allowing parallel model execution for better performance) and uses the `accountadmin` role for simplicity. 
+
+*Note: In a true production environment, you should create a dedicated dbt role rather than using `accountadmin`.*
+
+```yaml
+demo_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: <your_account_id_and_location>
+      user: <your_username>
+      password: <your_password>
+      role: accountadmin
+      database: demodb
+      warehouse: compute_warehouse
+      schema: public
+      threads: 10
+```
+
+## 4. Testing and Running Models
+Before running your models, you should verify that your profiles and project files are correctly linked to your database. Once the debug command returns `connection is okay`, you can run your initial skeleton models.
+
+```bash
+# Test the connection to Snowflake
+dbt debug
+
+# Run your dbt models
+dbt run
+```
+
+## 5. Version Control with Git
+After your project is initialized and running successfully, it is time to push the project to your Git repository. If you have extra folder layers you don't want, simply move your files to the root directory before running the standard Git commands.
+
+```bash
+git add .
+git commit -m "my first commit"
+git push
+```
+Once pushed, your team can begin creating branches to collaborate on building out your data warehouse.
