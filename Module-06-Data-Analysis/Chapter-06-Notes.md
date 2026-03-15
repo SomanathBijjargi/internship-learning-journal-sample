@@ -1,5 +1,3 @@
-Here is the markdown code for the Vibe Analysis document based on the provided sources. As requested, the code block does not contain any citations. 
-
 # Vibe Analysis
 
 Vibe analysis is analyzing data as if the analysis itself doesn't exist—you focus only on business outcomes, skipping intermediate steps. This approach emerged from **vibe coding**, where you code as if code doesn't exist. With vibe analysis, you give an LLM full context, state your goal, and review only the answers. The LLM handles exploration, cleaning, modeling, visualization, and deployment.
