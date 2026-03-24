@@ -32,7 +32,7 @@ Course Link: https://tds.s-anand.net/#/
 | Module 04 | Data Sourcing | Completed|
 | Module 05 | Data Preparation | Completed|
 | Module 06 | Data Analysis | Completed|
-| Module 07 | Data Visualization | Ongoing|
+| Module 07 | Data Visualization | Completed|
 
 ---
 
@@ -55,9 +55,6 @@ Course Link: https://tds.s-anand.net/#/
 
 ---
 
-## ❓ Doubts / Topics to Revisit
-...
----
 
 ## 🔄 Weekly Update Log
 | Week | What I Learned |
