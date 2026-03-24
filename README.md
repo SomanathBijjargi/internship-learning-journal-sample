@@ -65,7 +65,7 @@ Course Link: https://tds.s-anand.net/#/
 | Week 4 | Data Sourcing
 | Week 5 | Data Preparation
 | Week 6 | Data Analysis
-
+| Week 7 | Data Visualization
 
 ---
 
